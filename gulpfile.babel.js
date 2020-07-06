@@ -224,9 +224,9 @@ function images() {
 			$.if(
 				PRODUCTION,
 				$.imagemin([
-					// $.imagemin.jpegtran({
-					//   progressive: true,
-					// }),
+					$.imagemin.mozjpeg({
+					  progressive: true,
+					}),
 					$.imagemin.optipng({
 						progressive: true,
 					}),
