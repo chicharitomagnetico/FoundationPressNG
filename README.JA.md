@@ -20,7 +20,7 @@
 
 FoundationPressNGでは、[Sass](http://Sass-lang.com/) (超強力なCSS)を使用しています。Sassとは、簡単に言うと、スタイルをより効果的に整然と書けるようにするCSSプリプロセッサです。
 
-Sassはlibsassを使ってコンパイルされているので、マシンにGCCをインストールする必要があります。Windowsユーザーは[MinGW](http://www.mingw.org/)から、Macユーザーは[Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)からインストールできます。
+Sassはlibsassを使ってコンパイルされているので、マシンにGCCをインストールする必要があります。Windowsユーザーは[MinGW](http://www.mingw.org/)から、Macユーザーは[Xcode Command-line Tools]`$ xcode-select --install`でインストールできます。
 
 <!-- Sassベースのワークフローを使ったことがない方は、[FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners)を読むことをお勧めします。 -->
 
@@ -31,7 +31,12 @@ Sassはlibsassを使ってコンパイルされているので、マシンにGCC
 $ cd my-wordpress-folder/wp-content/themes/の
 $ git clone git@github.com:annrie/FoundationPressNG.git
 $ cd FoundationPress
-npmインストール
+$ npm install
+```
+### 1-2. yarn 2　の場合
+```bash
+$ npx @yarnpkg/doctor
+$ yarn install
 ```
 
 ### 2. 設定
@@ -50,7 +55,7 @@ Browsersync](https://www.browsersync.io/) (ファイル保存時のブラウザ�
 ### 3. 開始
 
 ```bash
-$ npm start
+$ npm start or yarn start
 ```
 
 ### 4. 本番用のアセットを作成する
@@ -58,13 +63,13 @@ $ npm start
 本番用にビルドする場合、CSSとJSはミニ化されます。/dist` フォルダ内のアセットをminify化するには、以下のように実行します。
 
 ```bash
-$ npm run build
+$ npm run build or yarn build
 ```
 
 #### テーマの.zipファイルを作成するには、以下のように実行してください。
 
 ```bash
-$ npm run package
+$ npm run package or yarn package
 ```
 
 このコマンドを実行すると、テーマのアセットをビルドしてminify化し、テーマの.zipアーカイブを `packaged` ディレクトリに配置します。これは、テーマをステージングサーバや本番サーバに転送するためにテーマを軽量化するために、`/node_modules`, `/src` などの開発者用ファイル/ディレクトリをテーマから除外します。
@@ -111,7 +116,7 @@ Foundationのモジュールを含むすべてのJavaScriptファイルは、`sr
 * [初期状態のFoundationPressNGインストールサイト](https://foundationpressng.phantomoon.com)
 * [FoundationPressNGキッチンシンク-動作中のすべての要素を確認する](https://foundationpressng.phantomoon.com/kitchen-sink/)
 
-## ローカサイト
+## ローカルサイト
 ローカルでのWordPress開発には、以下のいずれかの設定をお勧めします。
 
 * [MAMP](https://www.mamp.info/en/) (macOS)
